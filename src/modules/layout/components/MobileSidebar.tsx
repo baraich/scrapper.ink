@@ -49,10 +49,7 @@ export default function MobileSidebar() {
         </SheetTrigger>
         <SheetContent className="w-[400px] space-y-4" side="left">
           <div>
-            <div className="p-4 flex items-center justify-start gap-2">
-              <Logo />
-              <span>scrapper.ink</span>
-            </div>
+            <Logo />
             <Separator />
             <div className="p-4 flex-col flex gap-2">
               {sidebarItems.map((sidebarItem) => (
