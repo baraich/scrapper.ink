@@ -7,7 +7,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "./ui/breadcrumb";
+} from "../../../components/ui/breadcrumb";
 import React from "react";
 
 export default function Breadcrumbs() {
@@ -15,21 +15,21 @@ export default function Breadcrumbs() {
   const paths = pathname === "/" ? [""] : pathname.split("/");
 
   return (
-    <div className="flex items-center flex-start">
+    <div className="flex items-center flex-start py-0.5">
       <Breadcrumb>
         <BreadcrumbList>
           {paths.map((path, idx) => (
             <React.Fragment key={idx}>
-              <BreadcrumbItem>
-                <BreadcrumbLink
-                  className="capitalize"
-                  href={`/${path}`}
-                >
+              <BreadcrumbLink
+                className="capitalize"
+                href={`/${path}`}
+              >
+                <BreadcrumbItem>
                   {path === "" ? "home" : path}
-                </BreadcrumbLink>
+                </BreadcrumbItem>
+              </BreadcrumbLink>
 
-                {idx !== paths.length - 1 && <BreadcrumbSeparator />}
-              </BreadcrumbItem>
+              {idx !== paths.length - 1 && <BreadcrumbSeparator />}
             </React.Fragment>
           ))}
         </BreadcrumbList>
