@@ -1,6 +1,5 @@
 "use client";
 import { ResizablePanel } from "@/components/ui/resizable";
-import Logo from "@/modules/layout/components/Logo";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { SidebarItem, sidebarItems } from "../lib/routes";
 import { useSkippedMobile } from "@/hooks/use-skipped-mobile";
+import Logo from "./Logo";
 
 export default function DashboardSidebar() {
   const pathname = usePathname();
@@ -33,10 +33,7 @@ export default function DashboardSidebar() {
       className={cn("max-w-0", !isMobile && "max-w-xl")}
     >
       <div className="hidden sm:block">
-        <div className="p-4 flex items-center justify-start gap-2">
-          <Logo />
-          <span>scrapper.ink</span>
-        </div>
+        <Logo />
         <Separator />
 
         <div className="p-4 flex-col flex gap-2">

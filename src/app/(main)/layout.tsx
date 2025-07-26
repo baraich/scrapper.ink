@@ -1,3 +1,4 @@
+"use client";
 import Breadcrumbs from "@/modules/layout/components/Breadcrumbs";
 import {
   ResizableHandle,
@@ -7,6 +8,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import DashboardSidebar from "@/modules/layout/components/DashboardSidebar";
 import MobileSidebar from "@/modules/layout/components/MobileSidebar";
+import { SignedIn, UserButton } from "@clerk/nextjs";
 
 interface Props {
   children: React.ReactNode;
@@ -25,9 +27,14 @@ export default function MainLayout({ children }: Props) {
           maxSize={80}
           className="w-full h-full flex items-center flex-col"
         >
-          <div className="w-full p-4 flex gap-4">
-            <MobileSidebar />
-            <Breadcrumbs />
+          <div className="w-full p-4 flex gap-4 items-center justify-between">
+            <div>
+              <MobileSidebar />
+              <Breadcrumbs />
+            </div>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
           <Separator />
 

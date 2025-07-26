@@ -1,21 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
+import Icon from "./Icon";
 
-interface Props {
-  width?: number;
-  height?: number;
-}
-
-export default function Logo({ width = 24, height = 24 }: Props) {
+export default function Logo() {
   return (
-    <Link href={"/"}>
-      <Image
-        className="grayscale"
-        src={"/logo.svg"}
-        width={width}
-        height={height}
-        alt="Logo"
-      />
-    </Link>
+    <div className="p-4 py-4.5 flex items-center justify-start gap-2">
+      <Icon />
+      <span>scrapper.ink</span>
+    </div>
   );
 }
