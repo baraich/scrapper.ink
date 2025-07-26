@@ -10,7 +10,7 @@ export function useSkippedMobile() {
     function () {
       let timeout = setTimeout(
         () => setSkippedIsMobile(isMobile),
-        100
+        50
       );
       return () => clearInterval(timeout);
     },

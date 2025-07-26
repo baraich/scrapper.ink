@@ -15,7 +15,7 @@ export default function Breadcrumbs() {
   const paths = pathname === "/" ? [""] : pathname.split("/");
 
   return (
-    <div className="flex items-center flex-start py-0.5">
+    <div className="flex items-center flex-start">
       <Breadcrumb>
         <BreadcrumbList>
           {paths.map((path, idx) => (
