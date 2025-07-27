@@ -38,7 +38,7 @@ export default function MainLayout({ children }: Props) {
           </div>
           <Separator />
 
-          <div className="w-full h-full p-4">{children}</div>
+          <div className="w-full h-full">{children}</div>
         </ResizablePanel>
       </main>
     </ResizablePanelGroup>
