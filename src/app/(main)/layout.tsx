@@ -27,7 +27,7 @@ export default function MainLayout({ children }: Props) {
           maxSize={80}
           className="w-full h-full flex items-center flex-col"
         >
-          <div className="w-full p-4 flex items-center justify-between">
+          <div className="w-full p-4 flex items-center justify-between pl-2">
             <div className="py-1 flex gap-4">
               <MobileSidebar />
               <Breadcrumbs />

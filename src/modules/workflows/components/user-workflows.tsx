@@ -117,7 +117,7 @@ function WorkflowCard({ workflow }: WorkflowCardProps) {
       <div className="absolute top-3 right-3 z-10 space-x-1">
         <TooltipWrapper content={<p>Edit Workflow</p>}>
           <Button variant="outline" size="sm" asChild>
-            <Link href={`/workflows/${workflow.id}/editor`}>
+            <Link href={`/workflows/${workflow.id}`}>
               <ShuffleIcon />
             </Link>
           </Button>

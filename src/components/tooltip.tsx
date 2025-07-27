@@ -21,7 +21,7 @@ export default function TooltipWrapper({
         <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipContent
           side={side}
-          className="bg-primary text-primary-foreground border rounded-md p-2 text-xs"
+          className="bg-primary text-primary-foreground border rounded-md p-2 text-xs capitalize"
         >
           {content}
         </TooltipContent>

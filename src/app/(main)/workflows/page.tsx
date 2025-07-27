@@ -12,7 +12,7 @@ export default function Workflows() {
   );
 
   return (
-    <div className="flex-1 flex flex-col h-full">
+    <div className="flex-1 flex flex-col h-full p-4">
       <div className="h-full py-6">
         <Suspense fallback={<UserWorkflowsSkeleton />}>
           <UserWorkflows />
