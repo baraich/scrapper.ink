@@ -9,16 +9,21 @@ import { Separator } from "@/components/ui/separator";
 import DashboardSidebar from "@/modules/layout/components/DashboardSidebar";
 import MobileSidebar from "@/modules/layout/components/MobileSidebar";
 import { SignedIn, UserButton } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function MainLayout({ children }: Props) {
+  const pathname = usePathname();
+
   return (
     <ResizablePanelGroup direction="horizontal">
       <main className="w-screen min-h-screen flex justify-center">
-        <DashboardSidebar />
+        <DashboardSidebar
+          collapsed={/\/workflows\/\w+/gm.test(pathname)}
+        />
 
         <ResizableHandle withHandle />
         <ResizablePanel

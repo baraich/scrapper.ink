@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import {
+  GroupClassification,
   InputDataClassification,
   NodeInput,
   TaskClassification,
@@ -9,13 +10,19 @@ import { launchBrowser } from "../tasks/launch-browser";
 
 export const TasksConfig: Record<
   TaskClassification,
-  { label: string }
+  { label: string; group: GroupClassification }
 > = {
   LAUNCH_BROWSER: {
     label: "Launch Browser",
+    group: GroupClassification.TRIGGER,
+  },
+  READ_HTML_FROM_PAGE: {
+    label: "Read HTML From Page",
+    group: GroupClassification.EXTRACTION,
   },
 };
 
+// TODO: Fix these.
 export const TaskRegistry: Record<
   keyof typeof TaskClassification,
   (props: TaskProps) => JSX.Element

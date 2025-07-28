@@ -9,9 +9,14 @@ import { SidebarItem, sidebarItems } from "../lib/routes";
 import { useSkippedMobile } from "@/hooks/use-skipped-mobile";
 import Logo from "./Logo";
 
-export default function DashboardSidebar() {
+interface Props {
+  collapsed: boolean;
+}
+
+export default function DashboardSidebar({ collapsed }: Props) {
   const pathname = usePathname();
   const isMobile = useSkippedMobile();
+  const isCollapsed = collapsed || isMobile;
 
   const activeSidebarItem =
     sidebarItems.find(
@@ -30,7 +35,7 @@ export default function DashboardSidebar() {
       defaultSize={25}
       minSize={20}
       maxSize={25}
-      className={cn("max-w-0", !isMobile && "max-w-xl")}
+      className={cn("max-w-0", !isCollapsed && "max-w-xl")}
     >
       <div className="hidden sm:block">
         <Logo />

@@ -1,7 +1,13 @@
 import { Node } from "@xyflow/react";
 
+export enum GroupClassification {
+  TRIGGER = "TRIGGER",
+  EXTRACTION = "EXTRACTION",
+}
+
 export enum TaskClassification {
   LAUNCH_BROWSER = "LAUNCH_BROWSER",
+  READ_HTML_FROM_PAGE = "READ_HTML_FROM_PAGE",
 }
 
 export enum NodeClassification {

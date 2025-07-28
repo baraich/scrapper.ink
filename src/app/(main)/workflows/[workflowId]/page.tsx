@@ -28,10 +28,10 @@ export default async function WorkflowEditor({ params }: Props) {
     <ReactFlowProvider>
       <div className="flex-col w-full h-full items-center flex justify-between">
         <div className="w-full h-full flex">
-          <Editor workflowId={workflowId} />
-          <aside className="min-w-xs max-w-xs">
+          <aside className="w-[340px] min-w-[340px] max-w-[340px] border-r border-separate p-2 px-4 overflow-auto">
             <NodesListing />
           </aside>
+          <Editor workflowId={workflowId} />
         </div>
         <BottomBar workflowId={workflowId} />
       </div>
